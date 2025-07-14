@@ -1,0 +1,12 @@
+
+public class minimize_deviation {
+    public static int minimumDeviation(int[] nums) {
+        int n = nums.length;
+        Pri
+    }
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4};
+
+        System.out.println(minimumDeviation(arr));
+    }
+}

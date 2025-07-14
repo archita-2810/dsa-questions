@@ -1,0 +1,8 @@
+import java.util.ArrayList;
+
+public class smallest_range {
+    public static void main(String[] args) {
+        List<List<Integer>> nums = new ArrayList<>();
+        
+    }
+}

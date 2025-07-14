@@ -1,0 +1,48 @@
+import java.util.PriorityQueue;
+
+class Pair3 implements Comparable<Pair3> {
+    int num;
+    int row;
+
+    public Pair3(int num, int row){
+        this.num = num;
+        this.row = row;
+    }
+
+    public int compareTo(Pair3 p){
+        return this.num - p.num;
+    }
+}
+
+public class kweakest_row {
+    public static int[] kWeakestRows(int[][] mat, int k) {
+        int[] ans = new int[k];
+        PriorityQueue<Pair3> pq = new PriorityQueue<>();
+
+        for(int i = 0; i < mat.length; i++){
+            int count = 0;
+            for(int j = 0; j < mat[i].length; j++){
+                if(mat[i][j] == 1) count++;
+            }
+            pq.add(new Pair3(count, row));
+        }
+
+        int f = 0;
+        while (k > 0) {
+            Pair3 p = pq.poll();
+            ans[f] = p.row;
+            f++;
+            k--;
+        }
+
+        return ans;
+    }
+    public static void main(String[] args) {
+        int[][] mat = { { 1, 1, 0, 0, 0 }, { 1, 1, 1, 1, 0 }, { 1, 0, 0, 0, 0 }, { 1, 1, 0, 0, 0 }, { 1, 1, 1, 1, 1 } };
+
+        int[] arr = kWeakestRows(mat, 3);
+        for(int i = 0; i < arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
