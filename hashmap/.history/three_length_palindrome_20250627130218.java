@@ -1,0 +1,14 @@
+import java.util.HashMap;
+
+public class three_length_palindrome {
+    public static int countPalindromicSubsequence(String s) {
+        int n = s.length();
+        HashMap<Character, Integer> fmap = new HashMap<>();
+        HashMap<Character, Integer> lmap = new HashMap<>();
+    }
+    public static void main(String[] args) {
+        String s = "aabca";
+
+        System.out.println(countPalindromicSubsequence(s));
+    }
+}
